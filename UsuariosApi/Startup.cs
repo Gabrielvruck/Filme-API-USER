@@ -39,14 +39,6 @@ namespace UsuariosApi
                  opt.SignIn.RequireConfirmedEmail = true;
              }).AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProviders();
 
-            //services
-            //    .AddIdentity<IdentityUser<int>, IdentityRole<int>>(opt =>
-            //    {
-            //        opt.SignIn.RequireConfirmedEmail = true;
-            //    })
-            //    .AddEntityFrameworkStores<UserDbContext>()
-            //    .AddDefaultTokenProviders();
-
             services.AddScoped<LogoutService, LogoutService>();
             services.AddScoped<CadastroService, CadastroService>();
             services.AddScoped<TokenService, TokenService>();
