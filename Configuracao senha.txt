@@ -1,0 +1,12 @@
+Como dito anteriormente, é possível definir quais são os requisitos de uma senha utilizando o Identity. Por padrão, as senhas devem conter um caractere maiúsculo, um minúsculo, um dígito e um caractere não alfanumérico, além de seis caracteres no mínimo.
+
+Manipulando a nossa classe Startup em nosso método ConfigureServices(), é possível alterar este comportamento padrão, por exemplo:
+
+services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 8;
+});COPIAR CÓDIGO
+Mais exemplos e definições podem ser consultadas através da documentação oficial.
+https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-5.0#password
